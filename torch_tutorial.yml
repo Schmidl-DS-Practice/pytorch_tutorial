@@ -1,0 +1,25 @@
+# type the below two lines into your terminal:
+# conda env create --file torch_tutorial.yml
+# conda activate torch_tutorial
+
+name: torch_tutorial
+dependencies:
+  - pytorch
+  - torchvision
+  - python
+  - numpy
+  - pandas
+  - jupyter
+  - ipython
+
+# then run the test.ipynb to verify correct installaltion, not forgetting to change the notebook kernel to pytorch
+
+# to verify environments:
+# conda info --envs
+
+# to remove environment:
+# conda env remove -n ENVIRONMENT_NAME
+
+# If you update the `torch_tutorial.yml` you can run the following to update the
+# environment with your changes:
+# conda env update --file torch_tutorial.yml --prune
