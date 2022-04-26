@@ -1,5 +1,30 @@
+"""
+epoch = 1 means one forward and backward pass of ALL training samples
+batch_size = number of training samples in one forward and backward pass
+number of iterations = number of passes, each pass using [batch_size] number of samples
+e.g. 100 samples, batch_size=20 --> 100/20 = 5 iterations for 1 epoch
+"""
+
 import torch
-Dataset, DataLoader = torch.util.data.Dataset, torch.utils.data.DataLoader(dataset)
+import torchvision
+Dataset, DataLoader = torch.util.data.Dataset(), torch.utils.data.DataLoader()
 import numpy as np
 import math
 
+class WineDataset(Dataset):
+
+    def __init__(self):
+        # data loading
+        xy - np.loadtxt(".data/wine/wine.csv", delimiter=",", dtype=np.float32, skiprows=1)
+        self.x = torch.from_numpy(xy[:, 1:])
+        self.y = torch.from_numpy(xy[:, [0]]) # n_samples, 1
+
+        self.n_samples = xy.shape[0]
+
+    def __getitem__(self, index):
+        # dataset[0]
+        return self.x[index], self.y[index]
+
+    def __len__(self):
+        # len(dataset)
+        return self.n_samples
