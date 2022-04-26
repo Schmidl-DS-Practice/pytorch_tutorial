@@ -28,3 +28,30 @@ class WineDataset(Dataset):
     def __len__(self):
         # len(dataset)
         return self.n_samples
+
+dataset = WineDataset()
+first_data = dataset[0]
+features, labels = first_data
+print(features, labels)
+
+dataloader = DataLoader(dataset=dataset, batch_size=4, shuffle=True, num_workers=2)
+dataiter = iter(dataloader)
+data = dataiter.next()
+features, labels = data
+print(features, labels)
+
+# training loop
+num_epochs = 2
+total_samples = len(dataset)
+n_iter = math.ceil(total_samples / 4)
+print(total_samples, n_iter)
+
+for epoch in range(num_epochs):
+    for i, (inputs, lables) in enumerate(dataloader):
+        # forward, backward, update
+        if (i+1) % 5 == 0:
+            print(f"epoch {epoch+1}/{num_epochs}, step {i+1}/{n_iter}, inputs {inputs.shape}")
+
+
+torchvision.datasets.MNIST()
+# fahsion-mnist, cifar, coco
