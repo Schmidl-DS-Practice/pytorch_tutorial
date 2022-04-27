@@ -3,24 +3,24 @@
 # conda activate torch_tutorial
 
 name: torch_tutorial
+
 dependencies:
   - pytorch
   - torchvision
   - python
   - numpy
-  - jupyter
-  - ipython
+  - pandas
   - matplotlib
   - scikit-learn
   - scikit-learn-intelex
-
-# then run the test.ipynb to verify correct installaltion, not forgetting to change the notebook kernel to pytorch
+  - jupyter
+  - ipython
 
 # to verify environments:
 # conda info --envs
 
 # to remove environment:
-# conda env remove -n ENVIRONMENT_NAME
+# conda env remove -n torch_tutorial
 
 # If you update the `torch_tutorial.yml` you can run the following to update the
 # environment with your changes:
