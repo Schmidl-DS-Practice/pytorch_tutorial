@@ -6,10 +6,11 @@
 # Model evaluation
 # GPU support
 import torch
-nn = torch.nn
 import torchvision
-transforms = torchvision.transforms
 import matplotlib.pyplot as plt
+
+nn = torch.nn
+transforms = torchvision.transforms
 
 # device comfig
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
